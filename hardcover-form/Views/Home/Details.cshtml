@@ -1,0 +1,361 @@
+﻿@model hardcover_form.Models.SalesForm
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel=stylesheet type="text/css" href="~/css/reset.css" />
+    <link rel=stylesheet type="text/css" href="~/css/jquery-ui.min.css" />
+    <link rel=stylesheet type="text/css" href="~/css/screen.css" />
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <h1>Hardcover aanvraag</h1>
+        <h2></h2>
+    </header>
+    <form>
+        <section>
+            <div>
+                <article>
+                    <span>Bedrijfsnaam</span>
+                    <span>
+                        <b>
+                            @Html.DisplayFor(model => model.Bedrijfsnaam)
+                        </b>
+                    </span>
+                </article>
+                <article>
+                    <span>Contactpersoon</span>
+                    <span>
+                        @Html.DisplayFor(model => model.Contactpersoon)
+                    </span>
+                </article>
+                <article>
+                    <span>Emailadres</span>
+                    <span>
+                        @Html.DisplayFor(model => model.Emailadres)
+                    </span>
+                </article>
+            </div>
+            <div>
+                <article>
+                    <span>Postadres</span>
+                    <span>
+                        @Html.DisplayFor(model => model.Postadres)
+                    </span>
+                </article>
+                <article>
+                    <span></span>
+                    <span></span>
+                </article>
+                <article>
+                    <span>Datum doorsturen</span>
+                    <span>
+                        <b>
+                            @Html.DisplayFor(model => model.DatumDoorsturen)
+                        </b>
+                    </span>
+                </article>
+            </div>
+        </section>
+        <section class="single">
+            <div>
+                <article>
+                    <span>Werktitel</span>
+                    <span>
+                        <b>
+                            @Html.DisplayFor(model => model.Werktitel)
+                        </b>
+                    </span>
+                </article>
+                <article>
+                    <span>Formaat boekblok gesloten</span>
+                    <span>
+                        @Html.DisplayFor(model => model.FormaatBoekblokGesloten)
+                    </span>
+                    <span>Formaat open</span>
+                    <span>
+                        @Html.DisplayFor(model => model.FormaatOpen)
+                    </span>
+                    <span>Oplage</span>
+                    <span>
+                        @Html.DisplayFor(model => model.Oplage)
+                    </span>
+                </article>
+                <article>
+                    <span>Uitvoering</span>
+                </article>
+            </div>
+            <div>
+                <ul>
+                    <li>
+                        @Html.CheckBoxFor(model => model.RechteRug)
+                        <label for="rechte-rug">Rechte rug (inleg)</label>
+                    </li>
+                    <li>
+                        @Html.CheckBoxFor(model => model.Leeslintje)
+                        <label for="leeslintje">Leeslintje</label>
+                    </li>
+                    <li>
+                        @Html.CheckBoxFor(model => model.HalflinnenBand)
+                        <label for="halflinnen-band">Halflinnen Band</label>
+                    </li>
+                    <li>
+                        @Html.CheckBoxFor(model => model.BanderolBuikband)
+                        <label for="banderol-buikband">Banderol (buikband)</label>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        @Html.CheckBoxFor(model => model.RechteRugRol)
+                        <label for="rechte-rug-rol">Rechte rug van rol</label>
+                    </li>
+                    <li>
+                        @Html.CheckBoxFor(model => model.AfwijkendeBindwijze)
+                        <label for="afwijkende-bindwijze">Afwijkende bindwijze</label>
+                    </li>
+                    <li>
+                        @Html.CheckBoxFor(model => model.Integraalband)
+                        <label for="integraalband">Integraalband</label>
+                    </li>
+                    <li>
+                        @Html.CheckBoxFor(model => model.Gequillotineerd)
+                        <label for="gequillotineerd">Gequillotineerd</label>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        @Html.CheckBoxFor(model => model.RondeRug)
+                        <label for="ronde-rug">Ronde rug</label>
+                    </li>
+                    <li>
+                        @Html.CheckBoxFor(model => model.PapierenBand)
+                        <label for="papieren-band">Papieren band</label>
+                    </li>
+                    <li>
+                        @Html.CheckBoxFor(model => model.FransStofwikkel)
+                        <label for="frans-stofwikkel">Frans stofwikkel</label>
+                    </li>
+                    <li>
+                        @Html.CheckBoxFor(model => model.MinOversteekPlatten)
+                        <label for="min-oversteek-platten">Min. oversteek platten</label>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        @Html.CheckBoxFor(model => model.Kapitaalbandje)
+                        <label for="kapitaalbandje">Kapitaalbandje</label>
+                    </li>
+                    <li>
+                        @Html.CheckBoxFor(model => model.LinnenBand)
+                        <label for="linnen-band">Linnen band</label>
+                    </li>
+                    <li>
+                        @Html.CheckBoxFor(model => model.AmerikaansStofwikkel)
+                        <label for="amerikaans-stofwikkel">Amerikaans Stofwikkel</label>
+                    </li>
+                    <li>
+                        @Html.CheckBoxFor(model => model.Taalwissels)
+                        <label for="taalwissels">Taalwissels</label>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="single">
+            <h3>Druk</h3>
+            <div>
+                <article>
+                    <span>Binnenwerk</span>
+                    <span>
+                        @Html.DisplayFor(model => model.Binnenwerk)
+                    </span>
+                </article>
+                <article>
+                    <span>Schutbladen</span>
+                    <span>
+                        @Html.DisplayFor(model => model.Schutbladen)
+                    </span>
+                </article>
+                <article>
+                    <span>Band</span>
+                    <span>
+                        @Html.DisplayFor(model => model.Band)
+                    </span>
+                </article>
+                <article>
+                    <span>Stofwikkel</span>
+                    <span>
+                        @Html.DisplayFor(model => model.Stofwikkel)
+                    </span>
+                </article>
+            </div>
+        </section>
+        <section class="single">
+            <h3>Papier</h3>
+            <div>
+                <article>
+                    <span>Papier binnenwerk</span>
+                    <span>
+                        @Html.DisplayFor(model => model.PapierBinnenwerk)
+                    </span>
+                </article>
+                <article>
+                    <span>Papier schutbladen</span>
+                    <span>
+                        @Html.DisplayFor(model => model.PapierSchutbladen)
+                    </span>
+                </article>
+                <article>
+                    <span>Bandmateriaal</span>
+                    <span>
+                        @Html.DisplayFor(model => model.Bandmateriaal)
+                    </span>
+                </article>
+                <article>
+                    <span>Lamineren</span>
+                </article>
+            </div>
+            <div>
+                <ul>
+                    <li>
+                        @Html.CheckBoxFor(model => model.MatLaminaat)
+                        <label for="mat-laminaat">Mat laminaat</label>
+                    </li>
+                    <li>
+                        @Html.CheckBoxFor(model => model.KrasvastMatLami)
+                        <label for="krasvast-mat-lami">Krasvast mat lami</label>
+                    </li>
+                    <li>
+                        @Html.CheckBoxFor(model => model.Blinddruk)
+                        <label for"blinddruk">Blinddruk</label>
+                    </li>
+                    <li>
+                        @Html.CheckBoxFor(model => model.AndersZieAanvullend)
+                        <label for="anders-zie-aanvullend">Anders, zie aanvullend</label>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        @Html.CheckBoxFor(model => model.GlansLaminaat)
+                        <label for="glans-laminaat">Glans laminaat</label>
+                    </li>
+                    <li>
+                        @Html.CheckBoxFor(model => model.Foliedruk)
+                        <label for="foliedruk">Foliedruk</label>
+                    </li>
+                    <li>
+                        @Html.CheckBoxFor(model => model.SpotUv)
+                        <label for="spot-uv">Spot UV</label>
+                    </li>
+                    <li>
+                        @Html.CheckBoxFor(model => model.AllOverDispersielak)
+                        <label for="all-over-dispersielak">All over dispersielak</label>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <article>
+                    <span>Papier stofwikkel</span>
+                    <span>
+                        @Html.DisplayFor(model => model.PapierStofwikkel)
+                    </span>
+                </article>
+                <article>
+                    <span>Dikke karton platten</span>
+                </article>
+            </div>
+            <div class="shortlist">
+                <ul>
+                    <li>
+                        <label>
+                            @Html.RadioButtonFor(m => m.Dikte, "1mm")
+                            1mm
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            @Html.RadioButtonFor(m => m.Dikte, "1,5mm")
+                            1,5mm
+                        </label>
+                    </li>
+                    <li>
+
+                        <label>
+                            @Html.RadioButtonFor(m => m.Dikte, "2mm")
+                            2mm
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            @Html.RadioButtonFor(m => m.Dikte, "2,5mm")
+                            2,5mm
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            @Html.RadioButtonFor(m => m.Dikte, "3mm")
+                            3mm
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            @Html.RadioButtonFor(m => m.Dikte, "4mm")
+                            4mm
+                        </label>
+                    </li>
+                    <li>
+                        <label>
+                            @Html.RadioButtonFor(m => m.Dikte, "Standaard")
+                            Standaard
+                        </label>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="single">
+            <div class="longlist">
+                <ul>
+                    <li>
+                        @Html.CheckBoxFor(model => model.EenheidsprijsRgbCmyk)
+                        <label for="eenheidsprijs-rgb-cmyk">Eenheidsprijs omzetten RGB ---> CMYK</label>
+                    </li>
+                    <li>
+                        @Html.CheckBoxFor(model => model.EenheidsprijsDrukproef)
+                        <label for="eenheidsprijs-drukproef">Eenheidsprijs drukproef op oplagepapier</label>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        @Html.CheckBoxFor(model => model.EenheidsprijsDigitaal)
+                        <label for="eenheidsprijs-digitaal">Eenheidsprijs digitale kleurproef vel 70 x 100 cm</label>
+                    </li>
+                    <li>
+                        @Html.CheckBoxFor(model => model.IndividueelKrimpfolie)
+                        <label for="individueel-krimpfolie">Individueel onder krimpfolie</label>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <article>
+                    <span>Aanvullend</span>
+                </article>
+                <article>
+                    <p>
+                        @Html.DisplayFor(model => model.Aanvullend)
+                    </p>
+                </article>
+            </div>
+        </section>
+    </form>
+
+    <script type="text/javascript" src="~/js/jquery.js"></script>
+    <script type="text/javascript" src="~/js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="~/js/script.js"></script>
+</body>
+
+</html>
