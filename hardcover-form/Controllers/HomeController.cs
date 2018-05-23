@@ -7,16 +7,20 @@ using Microsoft.AspNetCore.Mvc;
 using hardcover_form.Models;
 using Newtonsoft.Json;
 using hardcover_form.Data;
+using DinkToPdf;
+using DinkToPdf.Contracts;
 
 namespace hardcover_form.Controllers
 {
     public class HomeController : Controller
     {
         private readonly SalesContext _context;
+        private readonly IConverter _converter;
 
-        public HomeController(SalesContext context)
+        public HomeController(SalesContext context, IConverter converter)
         {
             _context = context;
+            _converter = converter;
         }
 
         public IActionResult Index()
@@ -48,6 +52,26 @@ namespace hardcover_form.Controllers
         public IActionResult Details(int id)
         {
             return View(_context.SalesForms.Find(id));
+        }
+
+        [HttpGet("[controller]/[action]/{id}")]
+        public IActionResult Download(int id)
+        {
+            var url = Request.Scheme + "://" + Request.Host + "/Home/Details/" + id;
+
+            var doc = new HtmlToPdfDocument()
+            {
+                Objects = {
+                    new ObjectSettings()
+                    {
+                        Page = Request.Scheme + "://" + Request.Host + "/Home/Details/" + id
+                    }
+                }
+            };
+
+            byte[] pdfData = _converter.Convert(doc);
+
+            return File(pdfData, "application/pdf");
         }
 
         [HttpPost]
