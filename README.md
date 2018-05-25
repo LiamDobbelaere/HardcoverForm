@@ -27,7 +27,7 @@ De Download methode zal via de Details-url een HTML document ophalen dat kan geg
 
 De PDFgenerator is een singleton dat via dependency injection in de HomeController terecht komt. Het resultaat (de bytes in het geheugen, er wordt niks opgeslagen naar disk) worden als een File gestuurd naar de client.
 
-Het grootste probleem met de generator is het plaatsen van de libwkhtmltox.dll. Op het moment van schrijven moest ik manueel via de PATH variabele tonen waar deze PDF te vinden was, anders vond hij hem niet op het moment dat de conversie gebeurt. Heb al geprobeerd hem toe te voegen aan het project en 'Copy always' te selecteren, maar dit werkt niet.
+Het grootste probleem met de generator is het plaatsen van de libwkhtmltox.dll. Op het moment van schrijven moest ik manueel via de PATH variabele tonen waar deze DLL te vinden was, anders vond hij hem niet op het moment dat de conversie gebeurt. Heb al geprobeerd hem toe te voegen aan het project en 'Copy always' te selecteren, maar dit werkt niet.
 
 Vermoedelijk komt dit omdat IIS vanuit een andere plaats start dan de projectmap, waardoor de working directory niet klopt en hij de DLL niet kan vinden.
 
