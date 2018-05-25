@@ -7,354 +7,449 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel=stylesheet type="text/css" href="~/css/reset.css" />
-    <link rel=stylesheet type="text/css" href="~/css/jquery-ui.min.css" />
+    <link rel=stylesheet type="text/css" href="~/css/bootstrap.min.css" />
     <link rel=stylesheet type="text/css" href="~/css/screen.css" />
     <title>Document</title>
 </head>
 
 <body>
     <header>
-        <h1>Hardcover aanvraag</h1>
-        <h2></h2>
+        <h1>
+            Hardcover aanvraag
+            <a asp-controller="Home" asp-action="Index" class="btn btn-secondary">
+                Terug naar overzicht
+            </a>
+        </h1>
+        <h2>@Html.DisplayFor(m => m.Werktitel)</h2>
     </header>
-    <form>
-        <section>
-            <div>
-                <article>
-                    <span>Bedrijfsnaam</span>
-                    <span>
-                        <b>
-                            @Html.DisplayFor(model => model.Bedrijfsnaam)
-                        </b>
-                    </span>
-                </article>
-                <article>
-                    <span>Contactpersoon</span>
-                    <span>
-                        @Html.DisplayFor(model => model.Contactpersoon)
-                    </span>
-                </article>
-                <article>
-                    <span>Emailadres</span>
-                    <span>
-                        @Html.DisplayFor(model => model.Emailadres)
-                    </span>
-                </article>
-            </div>
-            <div>
-                <article>
-                    <span>Postadres</span>
-                    <span>
-                        @Html.DisplayFor(model => model.Postadres)
-                    </span>
-                </article>
-                <article>
-                    <span></span>
-                    <span></span>
-                </article>
-                <article>
-                    <span>Datum doorsturen</span>
-                    <span>
-                        <b>
-                            @Html.DisplayFor(model => model.DatumDoorsturen)
-                        </b>
-                    </span>
-                </article>
-            </div>
-        </section>
-        <section class="single">
-            <div>
-                <article>
-                    <span>Werktitel</span>
-                    <span>
-                        <b>
-                            @Html.DisplayFor(model => model.Werktitel)
-                        </b>
-                    </span>
-                </article>
-                <article>
-                    <span>Formaat boekblok gesloten</span>
-                    <span>
-                        @Html.DisplayFor(model => model.FormaatBoekblokGesloten)
-                    </span>
-                    <span>Formaat open</span>
-                    <span>
-                        @Html.DisplayFor(model => model.FormaatOpen)
-                    </span>
-                    <span>Oplage</span>
-                    <span>
-                        @Html.DisplayFor(model => model.Oplage)
-                    </span>
-                </article>
-                <article>
-                    <span>Uitvoering</span>
-                </article>
-            </div>
-            <div>
-                <ul>
-                    <li>
-                        @Html.CheckBoxFor(model => model.RechteRug)
-                        <label for="rechte-rug">Rechte rug (inleg)</label>
-                    </li>
-                    <li>
-                        @Html.CheckBoxFor(model => model.Leeslintje)
-                        <label for="leeslintje">Leeslintje</label>
-                    </li>
-                    <li>
-                        @Html.CheckBoxFor(model => model.HalflinnenBand)
-                        <label for="halflinnen-band">Halflinnen Band</label>
-                    </li>
-                    <li>
-                        @Html.CheckBoxFor(model => model.BanderolBuikband)
-                        <label for="banderol-buikband">Banderol (buikband)</label>
-                    </li>
-                </ul>
-                <ul>
-                    <li>
-                        @Html.CheckBoxFor(model => model.RechteRugRol)
-                        <label for="rechte-rug-rol">Rechte rug van rol</label>
-                    </li>
-                    <li>
-                        @Html.CheckBoxFor(model => model.AfwijkendeBindwijze)
-                        <label for="afwijkende-bindwijze">Afwijkende bindwijze</label>
-                    </li>
-                    <li>
-                        @Html.CheckBoxFor(model => model.Integraalband)
-                        <label for="integraalband">Integraalband</label>
-                    </li>
-                    <li>
-                        @Html.CheckBoxFor(model => model.Gequillotineerd)
-                        <label for="gequillotineerd">Gequillotineerd</label>
-                    </li>
-                </ul>
-                <ul>
-                    <li>
-                        @Html.CheckBoxFor(model => model.RondeRug)
-                        <label for="ronde-rug">Ronde rug</label>
-                    </li>
-                    <li>
-                        @Html.CheckBoxFor(model => model.PapierenBand)
-                        <label for="papieren-band">Papieren band</label>
-                    </li>
-                    <li>
-                        @Html.CheckBoxFor(model => model.FransStofwikkel)
-                        <label for="frans-stofwikkel">Frans stofwikkel</label>
-                    </li>
-                    <li>
-                        @Html.CheckBoxFor(model => model.MinOversteekPlatten)
-                        <label for="min-oversteek-platten">Min. oversteek platten</label>
-                    </li>
-                </ul>
-                <ul>
-                    <li>
-                        @Html.CheckBoxFor(model => model.Kapitaalbandje)
-                        <label for="kapitaalbandje">Kapitaalbandje</label>
-                    </li>
-                    <li>
-                        @Html.CheckBoxFor(model => model.LinnenBand)
-                        <label for="linnen-band">Linnen band</label>
-                    </li>
-                    <li>
-                        @Html.CheckBoxFor(model => model.AmerikaansStofwikkel)
-                        <label for="amerikaans-stofwikkel">Amerikaans Stofwikkel</label>
-                    </li>
-                    <li>
-                        @Html.CheckBoxFor(model => model.Taalwissels)
-                        <label for="taalwissels">Taalwissels</label>
-                    </li>
-                </ul>
-            </div>
-        </section>
-        <section class="single">
-            <h3>Druk</h3>
-            <div>
-                <article>
-                    <span>Binnenwerk</span>
-                    <span>
-                        @Html.DisplayFor(model => model.Binnenwerk)
-                    </span>
-                </article>
-                <article>
-                    <span>Schutbladen</span>
-                    <span>
-                        @Html.DisplayFor(model => model.Schutbladen)
-                    </span>
-                </article>
-                <article>
-                    <span>Band</span>
-                    <span>
-                        @Html.DisplayFor(model => model.Band)
-                    </span>
-                </article>
-                <article>
-                    <span>Stofwikkel</span>
-                    <span>
-                        @Html.DisplayFor(model => model.Stofwikkel)
-                    </span>
-                </article>
-            </div>
-        </section>
-        <section class="single">
-            <h3>Papier</h3>
-            <div>
-                <article>
-                    <span>Papier binnenwerk</span>
-                    <span>
-                        @Html.DisplayFor(model => model.PapierBinnenwerk)
-                    </span>
-                </article>
-                <article>
-                    <span>Papier schutbladen</span>
-                    <span>
-                        @Html.DisplayFor(model => model.PapierSchutbladen)
-                    </span>
-                </article>
-                <article>
-                    <span>Bandmateriaal</span>
-                    <span>
-                        @Html.DisplayFor(model => model.Bandmateriaal)
-                    </span>
-                </article>
-                <article>
-                    <span>Lamineren</span>
-                </article>
-            </div>
-            <div>
-                <ul>
-                    <li>
-                        @Html.CheckBoxFor(model => model.MatLaminaat)
-                        <label for="mat-laminaat">Mat laminaat</label>
-                    </li>
-                    <li>
-                        @Html.CheckBoxFor(model => model.KrasvastMatLami)
-                        <label for="krasvast-mat-lami">Krasvast mat lami</label>
-                    </li>
-                    <li>
-                        @Html.CheckBoxFor(model => model.Blinddruk)
-                        <label for"blinddruk">Blinddruk</label>
-                    </li>
-                    <li>
-                        @Html.CheckBoxFor(model => model.AndersZieAanvullend)
-                        <label for="anders-zie-aanvullend">Anders, zie aanvullend</label>
-                    </li>
-                </ul>
-                <ul>
-                    <li>
-                        @Html.CheckBoxFor(model => model.GlansLaminaat)
-                        <label for="glans-laminaat">Glans laminaat</label>
-                    </li>
-                    <li>
-                        @Html.CheckBoxFor(model => model.Foliedruk)
-                        <label for="foliedruk">Foliedruk</label>
-                    </li>
-                    <li>
-                        @Html.CheckBoxFor(model => model.SpotUv)
-                        <label for="spot-uv">Spot UV</label>
-                    </li>
-                    <li>
-                        @Html.CheckBoxFor(model => model.AllOverDispersielak)
-                        <label for="all-over-dispersielak">All over dispersielak</label>
-                    </li>
-                </ul>
-            </div>
-            <div>
-                <article>
-                    <span>Papier stofwikkel</span>
-                    <span>
-                        @Html.DisplayFor(model => model.PapierStofwikkel)
-                    </span>
-                </article>
-                <article>
-                    <span>Dikke karton platten</span>
-                </article>
-            </div>
-            <div class="shortlist">
-                <ul>
-                    <li>
-                        <label>
-                            @Html.RadioButtonFor(m => m.Dikte, "1mm")
-                            1mm
-                        </label>
-                    </li>
-                    <li>
-                        <label>
-                            @Html.RadioButtonFor(m => m.Dikte, "1,5mm")
-                            1,5mm
-                        </label>
-                    </li>
-                    <li>
 
-                        <label>
-                            @Html.RadioButtonFor(m => m.Dikte, "2mm")
-                            2mm
-                        </label>
-                    </li>
-                    <li>
-                        <label>
-                            @Html.RadioButtonFor(m => m.Dikte, "2,5mm")
-                            2,5mm
-                        </label>
-                    </li>
-                    <li>
-                        <label>
-                            @Html.RadioButtonFor(m => m.Dikte, "3mm")
-                            3mm
-                        </label>
-                    </li>
-                    <li>
-                        <label>
-                            @Html.RadioButtonFor(m => m.Dikte, "4mm")
-                            4mm
-                        </label>
-                    </li>
-                    <li>
-                        <label>
-                            @Html.RadioButtonFor(m => m.Dikte, "Standaard")
-                            Standaard
-                        </label>
-                    </li>
-                </ul>
-            </div>
-        </section>
-        <section class="single">
-            <div class="longlist">
-                <ul>
-                    <li>
-                        @Html.CheckBoxFor(model => model.EenheidsprijsRgbCmyk)
-                        <label for="eenheidsprijs-rgb-cmyk">Eenheidsprijs omzetten RGB ---> CMYK</label>
-                    </li>
-                    <li>
-                        @Html.CheckBoxFor(model => model.EenheidsprijsDrukproef)
-                        <label for="eenheidsprijs-drukproef">Eenheidsprijs drukproef op oplagepapier</label>
-                    </li>
-                </ul>
-                <ul>
-                    <li>
-                        @Html.CheckBoxFor(model => model.EenheidsprijsDigitaal)
-                        <label for="eenheidsprijs-digitaal">Eenheidsprijs digitale kleurproef vel 70 x 100 cm</label>
-                    </li>
-                    <li>
-                        @Html.CheckBoxFor(model => model.IndividueelKrimpfolie)
-                        <label for="individueel-krimpfolie">Individueel onder krimpfolie</label>
-                    </li>
-                </ul>
-            </div>
-            <div>
-                <article>
-                    <span>Aanvullend</span>
-                </article>
-                <article>
-                    <p>
-                        @Html.DisplayFor(model => model.Aanvullend)
-                    </p>
-                </article>
-            </div>
-        </section>
-    </form>
+    <table class="table">
+        <tbody>
+            <tr>
+                <td colspan="6" class="heading">
+                    Klant
+                </td>
+            </tr>
+            <tr class="sep">
+                <td>@Html.DisplayNameFor(m => m.Bedrijfsnaam)</td>
+                <td>
+                    <b>@Html.DisplayFor(m => m.Bedrijfsnaam)</b>
+                </td>
+                <td rowspan="4">@Html.DisplayNameFor(m => m.Adres)</td>
+                <td rowspan="4" colspan="2" style="white-space: pre-wrap;">@Html.DisplayFor(m => m.Adres)</td>
+            </tr>
+            <tr>
+                <td>@Html.DisplayNameFor(m => m.Contactpersoon)</td>
+                <td>@Html.DisplayFor(m => m.Contactpersoon)</td>
+            </tr>
+            <tr>
+                <td>@Html.DisplayNameFor(m => m.Emailadres)</td>
+                <td>@Html.DisplayFor(m => m.Emailadres)</td>
+            </tr>
+            <tr>
+                <td>@Html.DisplayNameFor(m => m.Telefoon)</td>
+                <td>@Html.DisplayFor(m => m.Telefoon)</td>
+            </tr>
+            <tr>
+                <td>Klant</td>
+                <td>
+                    <label>
+                        @Html.RadioButtonFor(m => m.Klant, "Bestaand") Bestaand
+                    </label>
+                    <label>
+                        @Html.RadioButtonFor(m => m.Klant, "Nieuw") Nieuw
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="6" class="heading">
+                    Offerte
+                </td>
+            </tr>
+            <tr class="sep">
+                <td>@Html.DisplayNameFor(m => m.Werktitel)</td>
+                <td>
+                    <b>@Html.DisplayFor(m => m.Werktitel)</b>
+                </td>
+                <td colspan="2">Herdruk</td>
+                <td>
+                    <label>
+                        @Html.RadioButtonFor(m => m.Herdruk, "Nieuw") Nieuw
+                    </label>
+                    <label>
+                        @Html.RadioButtonFor(m => m.Herdruk, "Identiek") Identiek:
+                        @Html.DisplayFor(m => m.Offertenummer)
+                    </label>
 
-    <script type="text/javascript" src="~/js/jquery.js"></script>
-    <script type="text/javascript" src="~/js/jquery-ui.min.js"></script>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td colspan="2">@Html.DisplayNameFor(m => m.Oplage)</td>
+                <td>@Html.DisplayFor(m => m.Oplage)</td>
+            </tr>
+            <tr>
+                <td>@Html.DisplayNameFor(m => m.DatumDoorsturen)</td>
+                <td>
+                    <b>@Html.DisplayFor(m => m.DatumDoorsturen)</b>
+                </td>
+                <td colspan="2">@Html.DisplayNameFor(m => m.PlanningGekend)</td>
+                <td>@Html.DisplayFor(m => m.PlanningGekend)</td>
+            </tr>
+            <tr>
+                <td>@Html.DisplayNameFor(m => m.Voorbespreken)</td>
+                <td>
+                    <label>
+                        @Html.RadioButtonFor(m => m.Voorbespreken, "Ja") Ja
+                    </label>
+                    <label>
+                        @Html.RadioButtonFor(m => m.Voorbespreken, "Nee") Nee
+                    </label>
+                </td>
+                <td colspan="2">
+                    @Html.DisplayNameFor(m => m.PrijsCommercieelOverleggen)
+                </td>
+                <td>
+                    @Html.DisplayFor(m => m.PrijsCommercieelOverleggen)
+                </td>
+            </tr>
+            <tr>
+                <td colspan="6" class="heading">
+                    Technische gegevens hardcover
+                </td>
+            </tr>
+            <tr class="sep">
+                <td>@Html.DisplayNameFor(m => m.AantalPaginasBinnenwerk)</td>
+                <td>
+                    @Html.DisplayFor(m => m.AantalPaginasBinnenwerk)
+                </td>
+            </tr>
+            <tr>
+                <td>@Html.DisplayNameFor(m => m.FormaatBoekblokGesloten)</td>
+                <td>@Html.DisplayFor(m => m.FormaatBoekblokGesloten)</td>
+                <td>@Html.DisplayNameFor(m => m.FormaatOpen)</td>
+                <td>@Html.DisplayFor(m => m.FormaatOpen)</td>
+            </tr>
+            <tr>
+                <td>Uitvoering</td>
+                <td>
+                    <label>
+                        @Html.CheckBoxFor(m => m.RechteRugInleg)
+                        @Html.DisplayNameFor(m => m.RechteRugInleg)
+                    </label>
+                </td>
+                <td>
+                    <label>
+                        @Html.CheckBoxFor(m => m.Leeslintje)
+                        @Html.DisplayNameFor(m => m.Leeslintje)
+                    </label>
+                </td>
+                <td>
+                    <label>
+                        @Html.CheckBoxFor(m => m.HalflinnenBand)
+                        @Html.DisplayNameFor(m => m.HalflinnenBand)
+                    </label>
+                </td>
+                <td colspan="2">
+                    <label>
+                        @Html.CheckBoxFor(m => m.Banderol)
+                        @Html.DisplayNameFor(m => m.Banderol)
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <label>
+                        @Html.CheckBoxFor(m => m.AfwijkendeBindwijze)
+                        @Html.DisplayNameFor(m => m.AfwijkendeBindwijze)
+                    </label>
+                </td>
+                <td>
+                    <label>
+                        @Html.CheckBoxFor(m => m.RondeRug)
+                        @Html.DisplayNameFor(m => m.RondeRug)
+                    </label>
+                </td>
+                <td>
+                    <label>
+                        @Html.CheckBoxFor(m => m.Gequillotineerd)
+                        @Html.DisplayNameFor(m => m.Gequillotineerd)
+                    </label>
+                </td>
+                <td colspan="2">
+                    <label>
+                        @Html.CheckBoxFor(m => m.RechteRugVanRol)
+                        @Html.DisplayNameFor(m => m.RechteRugVanRol)
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <label>
+                        @Html.CheckBoxFor(m => m.FransStofwikkel)
+                        @Html.DisplayNameFor(m => m.FransStofwikkel)
+                    </label>
+                </td>
+                <td>
+                    <label>
+                        @Html.CheckBoxFor(m => m.PapierenBand)
+                        @Html.DisplayNameFor(m => m.PapierenBand)
+                    </label>
+                </td>
+                <td>
+                    <label>
+                        @Html.CheckBoxFor(m => m.Kapitaalbandje)
+                        @Html.DisplayNameFor(m => m.Kapitaalbandje)
+                    </label>
+                </td>
+                <td colspan="2">
+                    <label>
+                        @Html.CheckBoxFor(m => m.LinnenBand)
+                        @Html.DisplayNameFor(m => m.LinnenBand)
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <label>
+                        @Html.CheckBoxFor(m => m.AmerikaansStofwikkel)
+                        @Html.DisplayNameFor(m => m.AmerikaansStofwikkel)
+                    </label>
+                </td>
+                <td>
+                    <label>
+                        @Html.CheckBoxFor(m => m.Taalwissels)
+                        @Html.DisplayNameFor(m => m.Taalwissels)
+                    </label>
+                </td>
+                <td colspan="2">
+                    <label>
+                        @Html.CheckBoxFor(m => m.MinOversteekPlatten)
+                        @Html.DisplayNameFor(m => m.MinOversteekPlatten)
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="6" class="heading">
+                    Papier
+                </td>
+            </tr>
+            <tr class="sep">
+                <td>@Html.DisplayNameFor(m => m.PapierBinnenwerk)</td>
+                <td style="white-space: pre-wrap;">@Html.DisplayFor(m => m.PapierBinnenwerk)</td>
+                <td>@Html.DisplayNameFor(m => m.PapierSchutbladen)</td>
+                <td>@Html.DisplayFor(m => m.PapierSchutbladen)</td>
+            </tr>
+            <tr>
+                <td>@Html.DisplayNameFor(m => m.PapierBand)</td>
+                <td>@Html.DisplayFor(m => m.PapierBand)</td>
+                <td>@Html.DisplayNameFor(m => m.PapierStofwikkel)</td>
+                <td>@Html.DisplayFor(m => m.PapierStofwikkel)</td>
+            </tr>
+            <tr>
+                <td>@Html.DisplayNameFor(m => m.PapierDiktePlatten)</td>
+                <td colspan="5">
+                    <label>
+                        @Html.RadioButtonFor(m => m.PapierDiktePlatten, "1 mm") 1 mm
+                    </label>
+                    <label>
+                        @Html.RadioButtonFor(m => m.PapierDiktePlatten, "1,5 mm") 1,5 mm
+                    </label>
+                    <label>
+                        @Html.RadioButtonFor(m => m.PapierDiktePlatten, "2 mm") 2 mm
+                    </label>
+                    <label>
+                        @Html.RadioButtonFor(m => m.PapierDiktePlatten, "2,5 mm") 2,5 mm
+                    </label>
+                    <label>
+                        @Html.RadioButtonFor(m => m.PapierDiktePlatten, "3 mm") 3 mm
+                    </label>
+                    <label>
+                        @Html.RadioButtonFor(m => m.PapierDiktePlatten, "4 mm") 4 mm
+                    </label>
+                    <label>
+                        @Html.RadioButtonFor(m => m.PapierDiktePlatten, "Standaard") Standaard
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="6" class="heading">
+                    Bedrukking
+                </td>
+            </tr>
+            <tr class="sep">
+                <td>@Html.DisplayNameFor(m => m.BedrukkingBinnenwerk)</td>
+                <td style="white-space: pre-wrap;">@Html.DisplayFor(m => m.BedrukkingBinnenwerk)</td>
+                <td>@Html.DisplayNameFor(m => m.BedrukkingSchutbladen)</td>
+                <td>@Html.DisplayFor(m => m.BedrukkingSchutbladen)</td>
+            </tr>
+            <tr>
+                <td>@Html.DisplayNameFor(m => m.BedrukkingStofwikkel)</td>
+                <td>@Html.DisplayFor(m => m.BedrukkingStofwikkel)</td>
+            </tr>
+            <tr>
+                <td>Band</td>
+                <td>
+                    <label>
+                        @Html.CheckBoxFor(m => m.BedrukkingMatLaminaat)
+                        @Html.DisplayNameFor(m => m.BedrukkingMatLaminaat)
+                    </label>
+                </td>
+                <td>
+                    <label>
+                        @Html.CheckBoxFor(m => m.BedrukkingGlansLaminaat)
+                        @Html.DisplayNameFor(m => m.BedrukkingGlansLaminaat)
+                    </label>
+                </td>
+                <td>
+                    <label>
+                        @Html.CheckBoxFor(m => m.BedrukkingKrasvastMatLaminaat)
+                        @Html.DisplayNameFor(m => m.BedrukkingKrasvastMatLaminaat)
+                    </label>
+                </td>
+                <td colspan="2">
+                    <label>
+                        @Html.CheckBoxFor(m => m.BedrukkingFoliedruk)
+                        @Html.DisplayNameFor(m => m.BedrukkingFoliedruk)
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <label>
+                        @Html.CheckBoxFor(m => m.BedrukkingBlinddruk)
+                        @Html.DisplayNameFor(m => m.BedrukkingBlinddruk)
+                    </label>
+                </td>
+                <td>
+                    <label>
+                        @Html.CheckBoxFor(m => m.BedrukkingSpotUV)
+                        @Html.DisplayNameFor(m => m.BedrukkingSpotUV)
+                    </label>
+                </td>
+                <td>
+                    <label>
+                        @Html.CheckBoxFor(m => m.BedrukkingZeefdruk)
+                        @Html.DisplayNameFor(m => m.BedrukkingZeefdruk)
+                    </label>
+                </td>
+                <td colspan="2">
+                    <label>
+                        @Html.CheckBoxFor(m => m.BedrukkingAlloverDispersielak)
+                        @Html.DisplayNameFor(m => m.BedrukkingAlloverDispersielak)
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <label>
+                        @Html.CheckBoxFor(m => m.BedrukkingAndersZieToelichting)
+                        @Html.DisplayNameFor(m => m.BedrukkingAndersZieToelichting)
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="6" class="heading">
+                    Prepress
+                </td>
+            </tr>
+            <tr class="sep">
+                <td></td>
+                <td colspan="2">
+                    <label>
+                        @Html.CheckBoxFor(m => m.CertifiedPDFs)
+                        @Html.DisplayNameFor(m => m.CertifiedPDFs)
+                    </label>
+                </td>
+                <td colspan="2">
+                    <label>
+                        @Html.CheckBoxFor(m => m.OpenBestanden)
+                        @Html.DisplayNameFor(m => m.OpenBestanden)
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="2">
+                    <label>
+                        @Html.CheckBoxFor(m => m.InkjetKleurproef)
+                        @Html.DisplayNameFor(m => m.InkjetKleurproef)
+                    </label>
+                </td>
+                <td colspan="2">
+                    <label>
+                        @Html.CheckBoxFor(m => m.DrukproefOpOplagepapier)
+                        @Html.DisplayNameFor(m => m.DrukproefOpOplagepapier)
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="2">
+                    <label>
+                        @Html.CheckBoxFor(m => m.OmzettingAfbeeldingProfiel)
+                        @Html.DisplayNameFor(m => m.OmzettingAfbeeldingProfiel)
+                    </label>
+                </td>
+                <td colspan="2">
+                    <label>
+                        @Html.CheckBoxFor(m => m.TariefBeeldbewerkingPerUur)
+                        @Html.DisplayNameFor(m => m.TariefBeeldbewerkingPerUur)
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="6" class="heading">
+                    Verpakking
+                </td>
+            </tr>
+            <tr class="sep">
+                <td></td>
+                <td colspan="2">
+                    <label>
+                        @Html.CheckBoxFor(m => m.HandzameDubbelgolfkartonnenDozen)
+                        @Html.DisplayNameFor(m => m.HandzameDubbelgolfkartonnenDozen)
+                    </label>
+                </td>
+                <td colspan="2">
+                    <label>
+                        @Html.CheckBoxFor(m => m.IndividueelOnderKrimpfolie)
+                        @Html.DisplayNameFor(m => m.IndividueelOnderKrimpfolie)
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="2">
+                    <label>
+                        @Html.CheckBoxFor(m => m.AfleveradresBekend)
+                        @Html.DisplayNameFor(m => m.AfleveradresBekend)
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="6" class="heading">
+                    @Html.DisplayNameFor(m => m.Toelichting)
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="5" style="white-space: pre-wrap;">@Html.DisplayFor(m => m.Toelichting)</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script type="text/javascript" src="~/js/jquery-3.3.1.slim.min.js"></script>
+    <script type="text/javascript" src="~/js/popper.min.js"></script>
+    <script type="text/javascript" src="~/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="~/js/bootstrap-confirmation.min.js"></script>
+    <script type="text/javascript" src="~/js/autosize.min.js"></script>
     <script type="text/javascript" src="~/js/script.js"></script>
 </body>
 

@@ -1,38 +1,28 @@
 (function() {
   $(function() {
-    $("input.date").datepicker();
-
-    /*$("#sendtest").on("click", function() {
-      var out = {};
+      $.fn.datepicker.dates['nl'] = {
+          days: ["Zondag", "Maandag", "Dinsdag", "Woensdag", "Donderdag", "Vrijdag", "Zaterdag"],
+          daysShort: ["Zo", "Ma", "Di", "Woe", "Do", "Vr", "Za"],
+          daysMin: ["Zo", "Ma", "Di", "Woe", "Do", "Vr", "Za"],
+          months: ["Januari", "Februari", "Maart", "April", "Mei", "Juni", "July", "Augustus", "September", "Oktober", "November", "December"],
+          monthsShort: ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dec"],
+          today: "Vandaag",
+          clear: "Legen",
+          format: "mm/dd/yyyy",
+          titleFormat: "MM yyyy", /* Leverages same syntax as 'format' */
+          weekStart: 1
+      };
       
-      $("input, textarea").each(function(index, input) {
-        var value = input.value;
+      var options = {
+          format: 'mm/dd/yyyy',
+          todayHighlight: true,
+          autoclose: true,
+          language: 'nl'
+      };
 
-        if (input.type === "checkbox" || input.type === "radio") {
-          value = $(input).is(":checked");
-        }
+      $(".datepicker input").datepicker(options);
 
-        var name = input.id.split('-').map(capitalize).join('');
-
-        out[name] = value;
-      });
-
-      console.log(out);
-
-      $.ajax({
-          url: "/home/save",
-          method: "POST",
-          dataType: "json",
-          contentType: "application/json",
-          data: JSON.stringify(out)
-      }).done(function(data) {
-        console.log(data);
-      });
-    });*/
+      autosize($("textarea"));
   });
-
-  function capitalize(str) {
-    return str.split('')[0].toUpperCase() + str.split('').splice(1).join('');
-  }
 
 })();

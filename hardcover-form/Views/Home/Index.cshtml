@@ -5,11 +5,11 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel=stylesheet type="text/css" href="~/css/bootstrap.min.css" />
 </head>
 <body>
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+    <div class="container">
 <table class="table">
     <thead>
         <tr>
@@ -32,13 +32,40 @@
                 @Html.DisplayFor(modelItem => item.Werktitel)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.ID" class="btn btn-info">Bewerken</a>
+                <a asp-action="Details" asp-route-id="@item.ID" class="btn btn-secondary">Details</a>
+                <a asp-action="Download" asp-route-id="@item.ID" class="btn btn-success">PDF</a>
+                <a asp-action="Delete" asp-route-id="@item.ID" 
+                data-toggle="confirmation" data-btn-ok-label="Verwijderen" data-btn-ok-class="btn-danger" 
+                data-btn-cancel-label="Annuleren" data-btn-cancel-class="btn-secondary" 
+                data-title="Verwijderen?" data-content="Dit is permanent!"
+                data-popout="true" class="btn btn-danger">Verwijderen</a>
             </td>
         </tr>
 }
+        <tr>
+            <td>
+                <a asp-action="Create" class="btn btn-primary">Nieuw formulier</a>
+            </td>
+            <td>
+
+            </td>
+            <td>
+                
+            </td>
+        </tr>
     </tbody>
 </table>
+</div>
+
+<script type="text/javascript" src="~/js/jquery-3.3.1.slim.min.js"></script>
+<script type="text/javascript" src="~/js/popper.min.js"></script>
+<script type="text/javascript" src="~/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript" src="~/js/bootstrap-confirmation.min.js"></script>
+<script>
+    $('[data-toggle=confirmation]').confirmation({
+        rootSelector: '[data-toggle=confirmation]'
+    });
+</script>
 </body>
 </html>
